@@ -8,8 +8,8 @@
  * @property {string} settings.openedImageScreenClass Класс для ширмы открытой картинки.
  * @property {string} settings.openedImageCloseBtnClass Класс для картинки кнопки закрыть.
  * @property {string} settings.openedImageCloseBtnSrc Путь до картинки кнопки закрыть.
- * @property {string} settings.GalleryWrapperBackClass Класс для блока прокрутки назад.
- * @property {string} settings.GalleryWrapperNextClass Класс для блока прокрутки вперед.
+ * @property {string} settings.galleryWrapperBackClass Класс для блока прокрутки назад.
+ * @property {string} settings.galleryWrapperNextClass Класс для блока прокрутки вперед.
  * @property {string} settings.openedImageNotLoadingSrc Путь до картинки заглушки если основная картинка не загрузилась).
  */
 const gallery = {
@@ -21,8 +21,8 @@ const gallery = {
     openedImageCloseBtnClass: 'galleryWrapper__close',
     openedImageCloseBtnSrc: 'images/gallery/close.png',
     openedImageNotLoadingSrc: 'images/gallery/not-loading2.png',
-    GalleryWrapperBackClass: 'galleryWrapper__Back',
-    GalleryWrapperNextClass: 'galleryWrapper__Next'
+    galleryWrapperBackClass: 'galleryWrapper__Back',
+    galleryWrapperNextClass: 'galleryWrapper__Next'
   },
   // Здесь будет храниться картинка-миниатюра, которую мы открыли.
   openedImageEl: null,
@@ -110,13 +110,13 @@ const gallery = {
 
     // Создаем элемент прокрутки назад
     const backGalleryEl = document.createElement('div');
-    backGalleryEl.classList.add(this.settings.GalleryWrapperBackClass);
+    backGalleryEl.classList.add(this.settings.galleryWrapperBackClass);
     backGalleryEl.addEventListener('click', () => this.getPrevImageOpen());
     galleryWrapperElement.appendChild(backGalleryEl);
 
     // Создаем элемент прокрутки вперед
     const nextGalleryEl = document.createElement('div');
-    nextGalleryEl.classList.add(this.settings.GalleryWrapperNextClass);
+    nextGalleryEl.classList.add(this.settings.galleryWrapperNextClass);
     nextGalleryEl.addEventListener('click', () => this.getNextImageOpen());
     galleryWrapperElement.appendChild(nextGalleryEl);
 
